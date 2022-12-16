@@ -11,6 +11,7 @@ import {
   MinutesAmountInput,
   Seperator,
   StartCountdownButton,
+  StopCountdownButton,
   TaskInput,
 } from './styles'
 
@@ -29,6 +30,7 @@ interface cycle {
   task: string
   minutesAmount: number
   starteDate: Date
+  interruptDate?: Date
 }
 
 export function Home() {
@@ -78,6 +80,22 @@ export function Home() {
     reset()
   }
 
+  function handleInterruptCycle() {
+    setCycle(
+      cycle.map((cycle) => {
+        if (cycle.id === activeCycleId) {
+          return { ...cycle, interruptDate: new Date() }
+        } else {
+          return cycle
+        }
+      }),
+    )
+
+    setActiveCycleId(null)
+  }
+
+  console.log(cycle)
+
   const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
   const currentSeconds = activeCycle ? totalSeconds - amountSecondesPassed : 0
 
@@ -104,6 +122,7 @@ export function Home() {
           <TaskInput
             id="task"
             list="task-sugesttions"
+            disabled={!!activeCycle}
             placeholder="Dê um nome para o seu projeto"
             {...register('task')}
           />
@@ -119,6 +138,7 @@ export function Home() {
             id="minuteAmount"
             type="number"
             placeholder="00"
+            disabled={!!activeCycle}
             step={5}
             max={60}
             min={5}
@@ -135,10 +155,17 @@ export function Home() {
           <span>{secondes[1]}</span>
         </CountContainer>
 
-        <StartCountdownButton disabled={isSubimitDisabled} type="submit">
-          <Play size={24} />
-          Começar
-        </StartCountdownButton>
+        {activeCycle ? (
+          <StopCountdownButton onClick={handleInterruptCycle} type="button">
+            <Play size={24} />
+            Interromper
+          </StopCountdownButton>
+        ) : (
+          <StartCountdownButton disabled={isSubimitDisabled} type="submit">
+            <Play size={24} />
+            Começar
+          </StartCountdownButton>
+        )}
       </form>
     </HomeContainer>
   )
