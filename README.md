@@ -6,7 +6,7 @@
 
 <br>
 
-> :mag_right: O Ignite Timer é uma ferramenta para aplicar a tecnica de pomodoro. "A técnica consiste na utilização de um cronômetro para dividir o trabalho em períodos de 25 minutos, separados por breves intervalos". Na página history se tem todas as suas tarefas e o seu statu.
+> :mag_right: O Ignite Timer é uma ferramenta para aplicar a tecnica de pomodoro. "A técnica consiste na utilização de um cronômetro para dividir o trabalho em períodos de 25 minutos, separados por breves intervalos". Na página history tem todas as suas tarefas e o seu status.
 
 <br>
 
