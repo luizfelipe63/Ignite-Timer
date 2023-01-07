@@ -2,7 +2,7 @@
 
   <h1 align="center">Luiz Felipe - Ignite Timer :alarm_clock: </h1>
 
-<div align="center"><img src="./src/assets/screenchot.gif"></div>
+<div align="center"><img src="./src/assets/ignite-timer.gif"></div>
 
 <br>
 
@@ -28,6 +28,28 @@
 - [ESLint](https://eslint.org/)
 - [date-fns](https://date-fns.org/)
 - [immer](https://github.com/immerjs/immer)
+
+## :round_pushpin: Como Usar
+
+<h3>Pré-requisitos</h3>
+
+- [NodeJS](https://github.com/)
+- [Git](https://github.com)
+- [npm](https://www.npmjs.com/)
+
+<h3>Clonar</h3>
+
+```bash
+git clone https://github.com/luizfelipe63/Ignite-Timer
+```
+
+<h3>Iniciar</h3>
+
+```bash
+cd Ignite-Timer
+npm install
+npm run dev
+```
 
 ## :punch: Colaboradores
 
